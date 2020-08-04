@@ -1,0 +1,21 @@
+markdown: kramdown
+
+title: "TensorBase"
+description: "A modern bigdata base for massive realtime data intelligence"
+keywords:
+- bigdata
+- massive
+- database
+- realtime
+- intelligence
+- SQL
+- query
+- compiler
+- performance
+- scaleup
+
+highlighter: rouge
+baseurl:
+xxxpermalink: /:categories/:title.html
+xxxexclude: ["vendor"]
+exclude: ["img-ppt"]
