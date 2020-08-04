@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>TensorBase</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- Theme CSS -->
+    <link href="/css/grayscale.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="/">
+                    TensorBase
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/">Home</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/#blog">Blog</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <section id="header" class="container content-section">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h1 style="text-align: left; margin: 0 0 12px;"><a href="/2020/08/04/hello-base.html">TensorBase: a modern engineering effort for taming data deluges</a></h1>
+                August 4, 2020
+            </div>
+            <div class="">
+                
+                
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="content" class="grey-section text-left">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+
+<p>Today, I am pleased to announce the milestone 0 of TensorBase (called Base for short as following).</p>
+
+<p>Base is a modern engineering effort for building a high performance and cost-effective bigdata analytics infrastructure in an open source culture. Base is written in the Rust language and her friend C language.</p>
+
+<h2 id="philosophy">Philosophy</h2>
+<hr />
+
+<h3 id="first-principle">First principle</h3>
+
+<p>Base is a project from the <a href="https://en.wikipedia.org/wiki/First_principle">“first principle”</a>. That is, unlike many other NoSQL/NewSQL products which claimed to be based on <a href="https://en.wikipedia.org/wiki/Spanner_(database)">Google Spanner</a> or similar, Base is based on almost <strong>nothing</strong>.</p>
+
+<p>The first principle for Base is just, only starting from current available commodities and software tools(a.k.a., languages and operation systems), asks three questions:</p>
+
+<ul>
+  <li>
+    <p>(Dream #1) What limit can Base reach, facing the planetary data tide?</p>
+  </li>
+  <li>
+    <p>(Dream #2) What an exciting community can Base build around?</p>
+  </li>
+  <li>
+    <p>(Dream #3) How can Base grant the public the ability to control the big data?</p>
+  </li>
+</ul>
+
+<h3 id="shared-something">Shared Something</h3>
+
+<p>In the design of distributed data systems, there are two architectures often talked: shared-nothing and shared everything.</p>
+
+<p>These are two extremes. Commonly, shared nothing is considered to be more scalable. But, it is suboptimal or even bad for non-trivial problems. For a database like product, nothing to share is awkward. For many global-viewpoint operations, it most likely requires global data movement. The remaindering is what/which/how data to remove. Easy to reason that a way of being ignorant of the environment and context is impossible to achieve the global optimum.</p>
+
+<p>OTOH, share everything, in fact, is idealized. Image that we have single big infinitely expandable computer. All problem solved… So, share everything truly compromises on scalability and has requirements to hardware.</p>
+
+<p><strong>Shared Something</strong> is a dynamic best effort architecture sitting between shared nothing and everything, which achieves best performance via finitely sharing partial necessary contexts which are environments and computing dependent. This is just a highly abstract proposal in that Base is still in answering it. The direction to approach is, self adaptive computing via some shared infrastructures in the society of decentralization. Here, shared infrastructures do not mean centralized components. It could be just mechanisms to allow efficient information sharing/exchanging.</p>
+
+<h3 id="architectural-performance">Architectural Performance</h3>
+
+<p>Performance is one of core architectural designs. Long-year experience of performance engineering taught me that if performance cannot be considered architecturally first, the final evolution is just the performance collapse that cannot be repaired unless rewritten (but usually you have no chance to rewrite).</p>
+
+<p>Scalability is another character often talked by projects. The truth is, good scalability does not mean high performance. Poor performance implementations are probably easier to achieve high scalability (in that you use a relative low baseline which may show no bottleneck in any aspects). High scalability within low performance is cost expensive, economic killer and high-carbon producer…</p>
+
+<p>Via architectural performance design, with Dream #1 in mind, Base is unique.</p>
+
+<h2 id="system">System</h2>
+
+<p>For short, the architectures are summarized in the following figure.</p>
+
+<p></p>
+<div>
+<img width="100%" src="/img/2020-08-04-hello-base/base_m0_system.png" />
+</div>
+<p align="center">Components under the Hood (Base m0)</p>
+
+<p>In this system, some parts are interesting, and some parts are indeed well-known (like in papers) but ridiculously no open-source counterpart. The details of components is out the scope of this post in that innovation big bangs here.</p>
+
+<p>One of core efforts of Base is to provide a <strong>highly hackable system</strong> for the community under the guidance of Dream #2.</p>
+
+<p>The system of Base is built with Rust and C. Rust lays a great base for system engineering. C is used to power a critical runtime kernel for read path(query) via a high-performance c jit compiler.</p>
+
+<p>The rationale for C is that Base needs a jit compiler for full performance (it was pity that recently I saw some project said its ability to call vcl vectorized functions as “fastest” database…).</p>
+
+<ul>
+  <li>C is a student-must-learn language.</li>
+  <li>C has a very nice development toolchain support than that of LLVM.</li>
+  <li>C jit compilation is lighting fast, which is on par or much faster than LLVM IR jit compilation (just proven in Base now). Neither C++ nor Rust could do this.</li>
+</ul>
+
+<p>After contributing bar lowered to the bottom, I am really looking forward to see how large could the developing efforts be built around the community.</p>
+
+<p>On the top of comfortable languages, the nature of “first principle” of Base, allows contributors to be more pleased to build elegant performance critical system with the help of the external excellent. For examples, it allows you use xdp and io_uring in network stack. (RDMA is scale-limited and cost-inefficient if we can appropriately combine modern commodity features.)</p>
+
+<p>Note: storage and C jit compiler in the system are not released or released in binary form in the m0 (in that they are under the heavy changes) but will come later.</p>
+
+<h2 id="launch">Launch</h2>
+<hr />
+
+<p>Let see what’s in Base m0.</p>
+
+<p>In m0, Base provides a prototyping level but full workflow from the perspective of simple data analysis tools:</p>
+
+<ol>
+  <li>command line tool: <em>baseops</em>
+    <ul>
+      <li>provides a subcommand <em>import</em>, to import csv data into Base</li>
+      <li>provides a subcommand <em>table</em>, to create a table definition</li>
+    </ul>
+  </li>
+  <li>command line tool: <em>baseshell</em>
+    <ul>
+      <li>provides a query client (now client is a monolithic to include everything)</li>
+      <li>m0 only supports query with single integer column type sum aggregation intentionally.</li>
+    </ul>
+  </li>
+</ol>
+
+<p />
+
+<h3 id="quick-start">Quick Start</h3>
+
+<p>let’s do quick start:</p>
+<ol>
+  <li>run <em>baseops</em> to create a table definition in Base
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cargo run <span class="nt">--bin</span> baseops table create <span class="nt">-c</span> samples/nyc_taxi_create_table_sample.sql
+</code></pre></div>    </div>
+    <p>Base explicitly separates write/mutation behaviors into the cli baseops. the provided sql file is just a DDL ansi-SQL, which can be seen in the <a href=""><em>samples</em> directory of repo</a>.</p>
+  </li>
+  <li>run <em>baseops</em> to import <a href="https://clickhouse.tech/docs/en/getting-started/example-datasets/nyc-taxi/">nyc_taxi csv dataset</a> into Base
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cargo run <span class="nt">--release</span> <span class="nt">--bin</span> baseops import csv <span class="nt">-c</span> /jian/nyc-taxi.csv <span class="nt">-i</span> nyc_taxi:trip_id,pickup_datetime,passenger_count:0,2,10:51
+</code></pre></div>    </div>
+    <p>Base import tool uniquely supports to import csv partially into storage like above. Use help to get more infos.</p>
+  </li>
+  <li>run <em>baseshell</em> to issue query against Base
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cargo run <span class="nt">--release</span> <span class="nt">--bin</span> baseshell
+</code></pre></div>    </div>
+  </li>
+</ol>
+<p />
+
+<h3 id="benchmark">Benchmark</h3>
+
+<p>New York Taxi Data is an interesting <a href="https://clickhouse.tech/docs/en/getting-started/example-datasets/nyc-taxi/">dataset</a>. It is a size-fit-for-quick-bench real world dataset. And, it is often used in eye-catching promotional headlines, such as “query 1.xB rows in milliseconds”. Now, I compare Base m0 against another OLAP DBMS <a href="https://en.wikipedia.org/wiki/ClickHouse">ClickHouse</a>(20.5.2.7, July, 2020):</p>
+
+<ol>
+  <li>
+    <p>The Base csv import tool is vectorized. It supports raw csv processing at ~20GB/s in memory. (2x-4x more improvement should be trivial if needed.)  The ~600GB 1.46 billion nyc taxi dataset importing run saturates my two SATA raid0 (1GB/s) and finished in 10 minutes. ClickHouse run at 600MB/s in the same hardware.</p>
+
+    <p>NOTE: Because ClickHouse does not support csv partially importing. So, 600MB/s ClickHouse importing is done in a ClickHouse favored way: to use a column-stripped csv. 600GB for Base is much larger than node’s memory, but the size of column-stripped csv for ClickHouse is memory-fit (and the cacheline is fully utilized). The official reports that ClickHouse on 8-disk raid5 takes <a href="https://clickhouse.tech/docs/en/getting-started/example-datasets/nyc-taxi/">76 minutes to finish</a>.</p>
+  </li>
+  <li>
+    <p>for the following simple aggregation,</p>
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="k">sum</span><span class="p">(</span><span class="n">trip_id</span><span class="o">-</span><span class="mi">100</span><span class="p">)</span><span class="o">*</span><span class="mi">123</span> <span class="k">from</span> <span class="n">nyc_taxi</span>
+</code></pre></div>    </div>
+
+    <p><strong>Base m0 are 6x faster than ClickHouse (20.5.2.7)</strong>: Base runs in ~100ms, ClickHouse runs in 600ms+.</p>
+  </li>
+</ol>
+
+<p></p>
+<div>
+<img width="100%" src="/img/2020-08-04-hello-base/base_m0.png" />
+</div>
+<p align="center">Aggregation results in Base's baseshell</p>
+
+<p></p>
+<div>
+<img width="100%" src="/img/2020-08-04-hello-base/clickhouse_20527.png" />
+</div>
+<p align="center">Aggregation result in ClickHouse client</p>
+
+<p>Note #1: The <a href="https://clickhouse.tech/docs/en/getting-started/example-datasets/nyc-taxi/">official ClickHouse configs</a> are used. The bench tests run several times, and use the best result for ClickHouse. (Then, this is just an in-memory query in same hardware, no actual disk io is involved and the ClickHouse result is on par with <a href="https://clickhouse.tech/docs/en/getting-started/example-datasets/nyc-taxi/">officially listed single node result</a>).</p>
+
+<p>Note #2: it is interesting to see a bug in Base’s jit compiler: it is expected that the second run of kernel should be shorter than it first run.</p>
+
+<p>Note #3: for showing the version of ClickHouse, the figure just picks the first run screenshot after client login. This does not affect the result in that the ClickHouse is in the server-client arch.</p>
+
+<p>Here, what I want to emphasize that the performance of Base for such trivial case is almost hitting the ceiling of single six-channel Xeon SP. That is because the parallel summation is just a trivial memory bandwidth benchmarking. The little improvement room is:</p>
+<ul>
+  <li>reduce the 15ms of current jit compilation (after above bug fixed, extra 15-20ms saving);</li>
+  <li>reduce 10-20ms of current naive parallel unbalancing.</li>
+</ul>
+
+<p>I will discuss potential improvements late.</p>
+
+<p>Although Base m0 just gives a prototype, it is <strong>trivial</strong> to expand to all other operations for a single table in hours. Welcome to Base community!</p>
+
+<h2 id="meeting-in-community">Meeting in Community</h2>
+<hr />
+
+<p>The true comparison is that, thanks to the appropriate ideologies (not only first principle…year-after-year experiences, practices, thoughts) and tools (Rust and C…), two-month Base can crush four-year ClickHouse in performance.</p>
+
+<p>Base is ambitious: from storage, to sql compilation, to mixed analytics load scheduling, to client/frontend, to performance engineering, to reliability engineering, to ops engineering and to security and privacy. Have a glimpse:</p>
+
+<ol>
+  <li>Base invents a sea-of-node style linear IR for SQL (extendable RA).</li>
+  <li>Base favors a kind of high level semantic transforms from IR to C which provides lighting fast, easy maintaining and semantic keeping code generations.</li>
+  <li>Base supports to write C in Rust and in future it is not hard to provide an in-Rust-source error diagnoses and debugging experiences with C LSP server. OTOH, this allows to use any Rust logics to generate arbitrary C templates.</li>
+  <li>Base is in prototyping a new tiered compilation which could provide faster compilation speed than all other open-source counterparts used LLVM IR compilation in short-time query.</li>
+  <li>…</li>
+</ol>
+
+<p />
+
+<p>If you are from Rust or C communities, please <a href="">give Base a star</a>. To help Base being the strong community voice: we can build best bigdata analytics infrastructure in the planet, not just C++ or Go. (For time reason, I do not repeatedly promote Rust and C in this post. Base for best proof!)</p>
+
+<p>If you are having some of dreams which Base have, we are the same data nerds. <a href="">Let’s chase our dreams together!</a></p>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                
+                
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="content" class="grey-section" style="margin: 0px; padding: 10px;">
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p><small>Copyright &copy; 2020 TensorBase </small></p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/vendor/jquery/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="/js/grayscale.js"></script>
+
+    <!-- Google Analytics -->
+
+</body>
+
+</html>
