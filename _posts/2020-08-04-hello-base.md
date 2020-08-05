@@ -6,7 +6,9 @@ date: 2020-08-04
 
 Today, I am pleased to announce the milestone 0 of TensorBase (called Base for short as following). 
 
-Base is a modern engineering effort for building a high performance and cost-effective bigdata analytics infrastructure in an open source culture. Base is written in the Rust language and her friend C language.
+Base is a modern engineering effort for building a high performance and cost-effective bigdata analytics infrastructure in an open source culture. 
+
+Base is written in the Rust language and its friend C language.
 
 
 ## Philosophy
@@ -69,9 +71,9 @@ The rationale for C is that Base needs a jit compiler for full performance (it w
 
 After contributing bar lowered to the bottom, I am really looking forward to see how large could the developing efforts be built around the community.
 
-On the top of comfortable languages, the nature of "first principle" of Base, allows contributors to be more pleased to build elegant performance critical system with the help of the external excellent. For examples, it allows you use xdp and io_uring in network stack. (RDMA is scale-limited and cost-inefficient if we can appropriately combine modern commodity features.)
+On the top of comfortable languages, the nature of "first principle" of Base, allows contributors to be more pleased to build elegant performance critical system with the help of the external excellent. For instance, it allows you use xdp and io_uring in network stack to enable a scalable and cost-efficient RDMA substitute.
 
-Note: storage and C jit compiler in the system are not released or released in binary form in the m0 (in that they are under the heavy changes) but will come later. 
+Note: storage and C jit compiler in the system are not released or released in binary form in the m0 (they are under heavy changes) but will come later. 
 
 
 ## Launch
@@ -144,8 +146,8 @@ Note #2: it is interesting to see a bug in Base's jit compiler: it is expected t
 Note #3: for showing the version of ClickHouse, the figure just picks the first run screenshot after client login. This does not affect the result in that the ClickHouse is in the server-client arch.
 
 Here, what I want to emphasize that the performance of Base for such trivial case is almost hitting the ceiling of single six-channel Xeon SP. That is because the parallel summation is just a trivial memory bandwidth benchmarking. The little improvement room is: 
-* reduce the 15ms of current jit compilation (after above bug fixed, extra 15-20ms saving);
-* reduce 10-20ms of current naive parallel unbalancing. 
+* ~15ms of current jit compilation (not trivial, after above bug fixed, extra 15-20ms saving);
+* 10-20ms of current naive parallel unbalancing (trivial for just fixing, not trivial for architectural elegance); 
 
 I will discuss potential improvements late. 
 
@@ -159,13 +161,13 @@ The true comparison is that, thanks to the appropriate ideologies (not only firs
 
 Base is ambitious: from storage, to sql compilation, to mixed analytics load scheduling, to client/frontend, to performance engineering, to reliability engineering, to ops engineering and to security and privacy. Have a glimpse:
 
-1. Base invents a sea-of-node style linear IR for SQL (extendable RA).
-2. Base favors a kind of high level semantic transforms from IR to C which provides lighting fast, easy maintaining and semantic keeping code generations. 
-3. Base supports to write C in Rust and in future it is not hard to provide an in-Rust-source error diagnoses and debugging experiences with C LSP server. OTOH, this allows to use any Rust logics to generate arbitrary C templates.
-4. Base is in prototyping a new tiered compilation which could provide faster compilation speed than all other open-source counterparts used LLVM IR compilation in short-time query.
+1. Base invents a data and control unified linear IR for SQL/RA (I called "sea-of-pipe").
+2. Base favors a kind of high level semantic keeping transforms from IR to C which provides lighting fast, easy maintaining code generations. 
+3. Base supports to write C in Rust via proc_macro and in future it is not hard to provide an in-Rust-source error diagnoses and debugging experiences. OTOH, this allows to use any Rust logics to generate arbitrary C templates.
+4. Base is in prototyping a new tiered compilation which sunshines in short-time queries compared to other open-source LLVM IR based counterparts.
 5. ...
 
 <p/>
-If you are from Rust or C communities, please [give Base a star](). To help Base being the strong community voice: we can build best bigdata analytics infrastructure in the planet, not just C++ or Go. (For time reason, I do not repeatedly promote Rust and C in this post. Base for best proof!)
+If you are from Rust or C communities, please [give Base a star](). To help Base being the strong community voice: we can build best bigdata analytics infrastructure in the planet.
 
 If you are having some of dreams which Base have, we are the same data nerds. [Let's chase our dreams together!]()
