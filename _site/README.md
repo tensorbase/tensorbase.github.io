@@ -1,1 +1,0 @@
-Website for TensorBase, based on [Grayscale](http://startbootstrap.com/template-overviews/grayscale/).
