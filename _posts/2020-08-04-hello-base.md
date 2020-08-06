@@ -172,4 +172,4 @@ Base is ambitious: from storage, to sql compilation, to mixed analytics load sch
 <p/>
 If you are from Rust or C communities, please [give Base a star](https://github.com/tensorbase/tensorbase). To help Base being the strong community voice: we can build best bigdata analytics infrastructure in the planet.
 
-If you are having some of dreams which Base have, we are the same data nerds. [Let's chase our dreams together!](https://github.com/tensorbase/tensorbase)
+If you are having some of dreams which Base have, we are the same data nerds. [Join us!](https://github.com/tensorbase/tensorbase)
