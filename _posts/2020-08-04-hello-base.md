@@ -53,9 +53,9 @@ For short, the architectures are summarized in the following figure.
 
 <p></p>
 <div>
-<img width="100%" src="/img/2020-08-04-hello-base/system_diagram.jpg"/>
+<img class="center_img" src="/img/2020-08-04-hello-base/system_diagram.png"/>
 </div>
-<p align="center">Components under the Hood (Base m0)</p>
+<p align="center">System sketch of TensorBase</p>
  
 In this system, some parts are interesting, and some parts are indeed well-known (like in papers) but ridiculously no open-source counterpart. The details of components is out the scope of this post in that innovation big bangs here.
 
@@ -63,7 +63,7 @@ One of core efforts of Base is to provide a **highly hackable system** for the c
 
 The system of Base is built with Rust and C. Rust lays a great base for system engineering. C is used to power a critical runtime kernel for read path(query) via a high-performance c jit compiler. 
 
-The rationale for C is that Base needs a jit compiler for full performance (it was pity that recently I saw some project said its ability to call vcl vectorized functions as "fastest" database...). 
+The rationale for C is that Base needs a jit compiler for full performance (it is pity that recently I see some project say its ability to call vcl vectorized functions as "fastest" database...). 
 
 * C is a student-must-learn language. 
 * C has a very nice development toolchain support than that of LLVM.
@@ -71,7 +71,8 @@ The rationale for C is that Base needs a jit compiler for full performance (it w
 * C has the best hardware compatibility.
 * C has one of highest performance in high level languages.
 
-By much more lowering the contributing bar, Base hopes more people can enjoy to engage in the community.
+<p/>
+By lowering the contributing bar, Base hopes more people can enjoy to engage in the community.
 
 On the top of comfortable languages, the nature of "first principle" of Base, allows contributors to be more pleased to build elegant performance critical system with the help of the external excellent. For instance, it allows you use xdp and io_uring in network stack to enable a scalable and cost-efficient RDMA substitute.
 
@@ -116,7 +117,7 @@ cargo run --release --bin baseshell
 <p/>
 ### Benchmark 
 
-New York Taxi Data is an interesting [dataset](https://clickhouse.tech/docs/en/getting-started/example-datasets/nyc-taxi/). It is a size-fit-for-quick-bench real world dataset. And, it is often used in eye-catching promotional headlines, such as "query 1.xB rows in milliseconds". Now, I compare Base m0 against another OLAP DBMS [ClickHouse](https://en.wikipedia.org/wiki/ClickHouse)(20.5.2.7, July, 2020):
+New York Taxi Data is an interesting [dataset](https://clickhouse.tech/docs/en/getting-started/example-datasets/nyc-taxi/). It is a size-fit-for-quick-bench real world dataset. And, it is often used in eye-catching promotional headlines, such as "query 1.xB rows in milliseconds". Now, I compare Base m0 against another OLAP DBMS [ClickHouse](https://en.wikipedia.org/wiki/ClickHouse)(20.5.2.7, got in July, 2020):
 
 1. The Base csv import tool is vectorized. It supports raw csv processing at ~20GB/s in memory. (2x-4x more improvement should be trivial if needed.)  The ~600GB 1.46 billion nyc taxi dataset importing run saturates my two SATA raid0 (1GB/s) and finished in 10 minutes. ClickHouse run at 600MB/s in the same hardware. 
     
@@ -131,13 +132,13 @@ select sum(trip_id-100)*123 from nyc_taxi
 
 <p></p>
 <div>
-<img width="100%" src="/img/2020-08-04-hello-base/base_m0.png"/>
+<img class="center_img_wider" src="/img/2020-08-04-hello-base/base_m0.png"/>
 </div>
 <p align="center">Aggregation results in Base's baseshell</p>
 
 <p></p>
 <div>
-<img width="100%" src="/img/2020-08-04-hello-base/clickhouse_20527.png"/>
+<img class="center_img_wider" src="/img/2020-08-04-hello-base/clickhouse_20527.png"/>
 </div>
 <p align="center">Aggregation result in ClickHouse client</p>
 
@@ -147,12 +148,11 @@ Note #2: it is interesting to see a bug in Base's jit compiler: it is expected t
 
 Note #3: for showing the version of ClickHouse, the figure just picks the first run screenshot after client login. This does not affect the result in that the ClickHouse is in the server-client arch.
 
-Here, what I want to emphasize that the performance of Base for such trivial case is almost hitting the ceiling of single six-channel Xeon SP. That is because the parallel summation is just a trivial memory bandwidth benchmarking. The little improvement room is: 
+Here, what I want to emphasize that the performance of Base for such trivial case is almost hitting the ceiling of single six-channel Xeon SP. That is because the parallel summation is just a trivial memory bandwidth benchmarking loop. There are tiny improvement rooms stay tuned: 
 * ~15ms of current jit compilation (not trivial, after above bug fixed, extra 15-20ms saving);
 * 10-20ms of current naive parallel unbalancing (trivial for just fixing, not trivial for architectural elegance); 
 
-I will discuss potential improvements late. 
-
+<p/>
 Although Base m0 just gives a prototype, it is **trivial** to expand to all other operations for a single table in hours. Welcome to Base community!
 
 
@@ -161,7 +161,7 @@ Although Base m0 just gives a prototype, it is **trivial** to expand to all othe
 
 The true comparison is that, thanks to the appropriate ideologies (not only first principle...year-after-year experiences, practices, thoughts) and tools (Rust and C...), two-month Base can crush four-year ClickHouse in performance.
 
-Base is ambitious: from storage, to sql compilation, to mixed analytics load scheduling, to client/frontend, to performance engineering, to reliability engineering, to ops engineering and to security and privacy. Have a glimpse:
+Base is ambitious: from storage, to sql compilation, to mixed analytics load scheduling, to client/frontend, to performance engineering, to reliability engineering, to ops engineering and to security and privacy. Take a glimpse:
 
 1. Base invents a data and control unified linear IR for SQL/RA (I called "sea-of-pipe").
 2. Base favors a kind of high level semantic keeping transforms from IR to C which provides lighting fast, easy maintaining code generations. 
