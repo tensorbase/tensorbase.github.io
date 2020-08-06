@@ -161,7 +161,7 @@ Although Base m0 just gives a prototype, it is **trivial** to expand to all othe
 
 The true comparison is that, thanks to the appropriate ideologies (not only first principle...year-after-year experiences, practices, thoughts) and tools (Rust and C...), two-month Base can crush four-year ClickHouse in performance.
 
-Base is ambitious: from storage, to sql compilation, to mixed analytics load scheduling, to client/frontend, to performance engineering, to reliability engineering, to ops engineering and to security and privacy. Take a glimpse:
+Base is ambitious: from storage, to sql compilation, to mixed analytics load scheduling, to client, to performance engineering, to reliability engineering, to ops engineering and to security and privacy. Take a glimpse:
 
 1. Base invents a data and control unified linear IR for SQL/RA (I called "sea-of-pipe").
 2. Base favors a kind of high level semantic keeping transforms from IR to C which provides lighting fast, easy maintaining code generations. 
