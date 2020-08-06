@@ -53,7 +53,7 @@ For short, the architectures are summarized in the following figure.
 
 <p></p>
 <div>
-<img width="100%" src="/img/2020-08-04-hello-base/base_m0_system.png"/>
+<img width="100%" src="/img/2020-08-04-hello-base/system_diagram.jpg"/>
 </div>
 <p align="center">Components under the Hood (Base m0)</p>
  
@@ -67,9 +67,11 @@ The rationale for C is that Base needs a jit compiler for full performance (it w
 
 * C is a student-must-learn language. 
 * C has a very nice development toolchain support than that of LLVM.
-* C jit compilation is lighting fast, which is on par or much faster than LLVM IR jit compilation (just proven in Base now). Neither C++ nor Rust could do this.
+* C jit compilation is lighting fast, which is on par or much faster than LLVM IR jit compilation (just proven in Base now). Neither C++ nor Rust could do this (at least now).
+* C has the best hardware compatibility.
+* C has one of highest performance in high level languages.
 
-After contributing bar lowered to the bottom, I am really looking forward to see how large could the developing efforts be built around the community.
+By much more lowering the contributing bar, Base hopes more people can enjoy to engage in the community.
 
 On the top of comfortable languages, the nature of "first principle" of Base, allows contributors to be more pleased to build elegant performance critical system with the help of the external excellent. For instance, it allows you use xdp and io_uring in network stack to enable a scalable and cost-efficient RDMA substitute.
 
