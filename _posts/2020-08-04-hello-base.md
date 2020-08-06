@@ -4,7 +4,7 @@ title: "TensorBase: a modern engineering effort for taming data deluges"
 date: 2020-08-04
 ---
 
-Today, I am pleased to announce the milestone 0 of TensorBase (called Base for short as following). 
+Today, I am pleased to announce the milestone 0 of [TensorBase](https://github.com/tensorbase/tensorbase) (called Base for short as following). 
 
 Base is a modern engineering effort for building a high performance and cost-effective bigdata analytics infrastructure in an open source culture. 
 
@@ -170,6 +170,6 @@ Base is ambitious: from storage, to sql compilation, to mixed analytics load sch
 5. ...
 
 <p/>
-If you are from Rust or C communities, please [give Base a star](). To help Base being the strong community voice: we can build best bigdata analytics infrastructure in the planet.
+If you are from Rust or C communities, please [give Base a star](https://github.com/tensorbase/tensorbase). To help Base being the strong community voice: we can build best bigdata analytics infrastructure in the planet.
 
-If you are having some of dreams which Base have, we are the same data nerds. [Let's chase our dreams together!]()
+If you are having some of dreams which Base have, we are the same data nerds. [Let's chase our dreams together!](https://github.com/tensorbase/tensorbase)
