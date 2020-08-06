@@ -74,7 +74,7 @@ The rationale for C is that Base needs a jit compiler for full performance (it i
 <p/>
 By lowering the contributing bar, Base hopes more people can enjoy to engage in the community.
 
-On the top of comfortable languages, the nature of "first principle" of Base, allows contributors to be more pleased to build elegant performance critical system with the help of the external excellent. For instance, it allows you use xdp and io_uring in network stack to enable a scalable and cost-efficient RDMA substitute.
+On the top of comfortable languages, the nature of "first principle" of Base, allows contributors to be more pleased to build elegant performance critical system with the help of the external excellent. For instance, to use modern Linux kernel's xdp in network stack to enable a scalable and cost-efficient RDMA alternative on commodity network (io_uring is that new standard tool in lower performance).
 
 Note: storage and C jit compiler in the system are not released or released in binary form in the m0 (they are under heavy changes) but will come later. 
 
