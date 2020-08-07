@@ -42,7 +42,7 @@ OTOH, share everything, in fact, is idealized. Image that we have single big inf
 
 Performance is one of core architectural designs. Long-year experience of performance engineering taught me that if performance cannot be considered architecturally first, the final evolution is just the performance collapse that cannot be repaired unless rewritten (but usually you have no chance to rewrite).
 
-Scalability is another character often talked by projects. The truth is, good scalability does not mean high performance. Poor performance implementations are probably easier to achieve high scalability (in that you use a relative low baseline which may show no bottleneck in any aspects). High scalability within low performance is cost expensive, economic killer and high-carbon producer...
+Scalability is another character often talked by projects. The truth is, good scalability does not mean high performance. Poor performance implementations are probably easier to achieve high scalability (in that you use a relative low baseline which may shows no bottleneck in any aspects). High scalability within low performance is cost expensive, economic killer and high-carbon producer...
 
 Via architectural performance design, with Dream #1 in mind, Base is unique.
 
@@ -64,12 +64,6 @@ One of core efforts of Base is to provide a **highly hackable system** for the c
 The system of Base is built with Rust and C. Rust lays a great base for system engineering. C is used to power a critical runtime kernel for read path(query) via a high-performance c jit compiler. 
 
 The rationale for C is that Base needs a jit compiler for full performance (it is pity that recently I see some project say its ability to call vcl vectorized functions as "fastest" database...). 
-
-* C is a student-must-learn language. 
-* C has a very nice development toolchain support than that of LLVM.
-* C jit compilation is lighting fast, which is on par or much faster than LLVM IR jit compilation (just proven in Base now). Neither C++ nor Rust could do this (at least now).
-* C has the best hardware compatibility.
-* C has one of highest performance in high level languages.
 
 <p/>
 By lowering the contributing bar, Base hopes more people can enjoy to engage in the community.
@@ -119,7 +113,7 @@ cargo run --release --bin baseshell
 
 New York Taxi Data is an interesting [dataset](https://clickhouse.tech/docs/en/getting-started/example-datasets/nyc-taxi/). It is a size-fit-for-quick-bench real world dataset. And, it is often used in eye-catching promotional headlines, such as "query 1.xB rows in milliseconds". Now, I compare Base m0 against another OLAP DBMS [ClickHouse](https://en.wikipedia.org/wiki/ClickHouse)(20.5.2.7, got in July, 2020):
 
-1. The Base csv import tool is vectorized. It supports raw csv processing at ~20GB/s in memory. (2x-4x more improvement should be trivial if needed.)  The ~600GB 1.46 billion nyc taxi dataset importing run saturates my two SATA raid0 (1GB/s) and finished in 10 minutes. ClickHouse run at 600MB/s in the same hardware. 
+1. The Base csv import tool is vectorized. It supports raw csv processing at ~20GB/s in memory. The ~600GB 1.46 billion nyc taxi dataset importing run saturates my two SATA raid0 (1GB/s) and finished in 10 minutes. ClickHouse run at 600MB/s in the same hardware. 
     
     NOTE: Because ClickHouse does not support csv partially importing. So, 600MB/s ClickHouse importing is done in a ClickHouse favored way: to use a column-stripped csv. 600GB for Base is much larger than node's memory, but the size of column-stripped csv for ClickHouse is memory-fit (and the cacheline is fully utilized). The official reports that ClickHouse on 8-disk raid5 takes [76 minutes to finish](https://clickhouse.tech/docs/en/getting-started/example-datasets/nyc-taxi/).
 
