@@ -157,7 +157,7 @@ The true comparison is that, thanks to the appropriate ideologies (not only firs
 
 Base is ambitious: from storage, to sql compilation, to mixed analytics load scheduling, to client, to performance engineering, to reliability engineering, to ops engineering and to security and privacy. Take a glimpse:
 
-1. Base invents a data and control unified linear IR for SQL/RA (I called "sea-of-pipe").
+1. Base invents a data and control unified linear IR for SQL/RA (I called "sea-of-pipes").
 2. Base favors a kind of high level semantic keeping transforms from IR to C which provides lighting fast, easy maintaining code generations. 
 3. Base supports to write C in Rust via proc_macro and in future it is not hard to provide an in-Rust-source error diagnoses and debugging experiences. OTOH, this allows to use any Rust logics to generate arbitrary C templates.
 4. Base is in prototyping a new tiered compilation which sunshines in short-time queries compared to other open-source LLVM IR based counterparts.
