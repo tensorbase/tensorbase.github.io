@@ -95,6 +95,7 @@ Neat! Do not need endless prints in you code any more!
 
 Finally, I hope fearless proc macro programming coming soon:)
 
+## [Comments](https://www.reddit.com/r/rust/comments/kszyoa/engineering_rust_tips_1_proc_macro_debugging/)
 
 ## References
 1. [cargo expand](https://github.com/dtolnay/cargo-expand)
