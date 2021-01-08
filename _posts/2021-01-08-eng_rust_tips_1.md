@@ -45,7 +45,7 @@ When I miss a delimiter $ for dsadsa, then it panics,
 <img class="center_img" src="/img/eng_rust_tips_1/panic_java_in_rust.png"/>
 </div>
 <p/>
-Here, we may not quickly understand the exact problem in that we have no dedicated indication.
+Here, we may not quickly understand the exact problem in that we have no useful indication.
 
 Then, we use diag APIs in the potential key parsing point:
 
