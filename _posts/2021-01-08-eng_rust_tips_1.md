@@ -62,34 +62,34 @@ And try another case - interpolated variable typo, we got this:
 <p/>
 We find that is an error prompt in RA, and it is said that what's the problem identity and the location/span of this ident (Note: here the span is not exact which may be confirmed by Rust core team).
 
-By change function call from "error" to "warning", we got a non-blocking prompt like this:
+By changing function call from "error" to "warning", we got a "non-blocking" warning style prompt like this:
 <p></p>
 <div>
 <img class="center_img" src="/img/eng_rust_tips_1/proc_macro_diags_warn_lite.png"/>
 </div>
 <p/>
-There are four APIs: __error__, __warning__, __help__ and __note__ on Span for your favors.
+There are four APIs: __error__, __warning__, __help__ and __note__ on Span for your favors. Consult the tracking issue for more[3] .
 
 Great user-friendly proc macro diag experiences!
 
 
 ## Unit Testability for Proc Macro
 
-Generally, the proc macro is just one compiler plugin kind to run at compilation time. However, it is even hard to a entrance for the compilation time debugging in that we are not language developers.
+Generally, the proc macro is just one compiler plugin kind to run at compilation time. However, it is even hard to figure out a good entrance for this kind debugging in that we are not language developers.
 
-So, another not well known way is, our core team gradually makes the proc macro unit testability. 
+Another not-well-known way is, our core team gradually makes the proc macro unit testable (WIP). 
 
-You just write a unit testability friendly tests like your conventional unit tests, for example, [unit tests for above s! macro test](https://github.com/tensorbase/tensorbase/blob/812ade62dec267652cc21373bb5efddda9097925/crates/base/proc_macro/src/lib.rs#L101).
+You just write a unit-testability-friendly tests like your conventional unit tests, for example, [unit tests for above s! macro test](https://github.com/tensorbase/tensorbase/blob/812ade62dec267652cc21373bb5efddda9097925/crates/base/proc_macro/src/lib.rs#L101).
 
 The advantage of unit test is that you use every swiss knifes in your toolbox with a right engineering style(no any adhoc setup). 
 
-For example, I enable the native debugging to the test to see what I have in kinds of proc macro syntax objects, like TokenStream here on the fly:
+For example, I enable the native debugging to the test to see what I have in kinds of proc macro syntax objects, like TokenStream here just by one click in RA:
 
 <div>
 <img class="center_img_wider" src="/img/eng_rust_tips_1/proc_marco_unit_test.png"/>
 </div>
 <p/>
-Do not need to add endless prints in you code any more!
+Neat! Do not need to add endless prints in you code any more!
 
 Finally, I hope fearless proc macro programming coming soon:)
 
