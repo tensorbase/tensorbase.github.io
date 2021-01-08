@@ -27,39 +27,39 @@ The nightly has introduced "Procedural Macro Diagnostics" APIs under the feature
 
 Here, I use [the s! macro in TensorBase as an example](https://github.com/tensorbase/tensorbase/blob/812ade62dec267652cc21373bb5efddda9097925/crates/base/tests/proc_macro_tests.rs#L35), which makes your writing C, Java like codes in your Rust sources in a free style. (In fact, this is just a raw token container with in-Rust value interpolation, you can embed almost any language in Rust using it.)
 
-1. In a normal working scenarios, like this:
-<p></p>
+In a normal working scenarios, like this:
+
 <div>
 <img class="center_img" src="/img/eng_rust_tips_1/ok_java_code_in_rust.png"/>
 </div>
 
 expected gen-ed code is this:
-<p></p>
+
 <div>
 <img class="center_img" src="/img/eng_rust_tips_1/ok_test_output.png"/>
 </div>
 
-2. When I miss a delimiter $, then it panics,
-<p></p>
+When I miss a delimiter $, then it panics,
+
 <div>
 <img class="center_img" src="/img/eng_rust_tips_1/panic_java_in_rust.png"/>
 </div>
 here, we do not quickly understand the exact problem even that we can roll the vscode console to that panic point for some print-outs.
 
-3. Then, we use diag APIs in the potential key parsing point:
-<p></p>
+Then, we use diag APIs in the potential key parsing point:
+
 <div>
 <img class="center_img" src="/img/eng_rust_tips_1/use_pm_diag.png"/>
 </div>
 
-4. We got this:
+We got this:
 <p></p>
 <div>
 <img class="center_img" src="/img/eng_rust_tips_1/proc_macro_diags_err_lite.png"/>
 </div>
 We find that is an error prompt in RA, and it is said that what's the problem identity and the location/span of this ident (Note: here the span is not exact which may be confirmed by Rust core team).
 
-5. By change function call from "error" to "warning", we got a non-blocking prompt like this:
+By change function call from "error" to "warning", we got a non-blocking prompt like this:
 <p></p>
 <div>
 <img class="center_img" src="/img/eng_rust_tips_1/proc_macro_diags_warn_lite.png"/>
@@ -81,9 +81,9 @@ You just write a unit testability friendly tests like your conventional unit tes
 The advantage of unit test is that you use every swiss knifes in your toolbox with a right engineering style(no any adhoc setup). 
 
 For example, I enable the native debugging to the test to see what I have in kinds of proc macro syntax objects, like TokenStream here on the fly:
-<p></p>
+
 <div>
-<img class="center_img" src="/img/eng_rust_tips_1/proc_marco_unit_test.png"/>
+<img class="center_img" src="/img/eng_rust_tips_1/proc_marco_unit_test.png" width="600" height="300"/>
 </div>
 
 Do not need to add endless prints in you code any more!
