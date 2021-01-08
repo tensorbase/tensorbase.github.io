@@ -83,7 +83,7 @@ The advantage of unit test is that you use every swiss knifes in your toolbox wi
 For example, I enable the native debugging to the test to see what I have in kinds of proc macro syntax objects, like TokenStream here on the fly:
 
 <div>
-<img class="center_img" src="/img/eng_rust_tips_1/proc_marco_unit_test.png" width="75%"/>
+<img class="center_img_wider" src="/img/eng_rust_tips_1/proc_marco_unit_test.png"/>
 </div>
 
 Do not need to add endless prints in you code any more!
