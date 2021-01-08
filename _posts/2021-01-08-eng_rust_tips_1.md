@@ -39,7 +39,7 @@ expected gen-ed code is this:
 <img class="center_img" src="/img/eng_rust_tips_1/ok_test_output.png"/>
 </div>
 <p/>
-When I miss a delimiter $, then it panics,
+When I miss a delimiter $ for dsadsa, then it panics,
 
 <div>
 <img class="center_img" src="/img/eng_rust_tips_1/panic_java_in_rust.png"/>
