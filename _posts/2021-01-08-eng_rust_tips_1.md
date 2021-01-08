@@ -47,7 +47,7 @@ When I miss a delimiter $ for dsadsa, then it just panics,
 <p/>
 Here, we may not quickly understand the exact problem in that we have no useful indication.
 
-Then, we use diag APIs in the potential key parsing point:
+Then, we use diag APIs in the potential key parsing points, like:
 
 <div>
 <img class="center_img_wider" src="/img/eng_rust_tips_1/use_pm_diag.png"/>
