@@ -57,7 +57,7 @@ Then, we use diag APIs in the potential key parsing point:
 And try another case - interpolated variable typo, we got this:
 <p></p>
 <div>
-<img class="center_img" src="/img/eng_rust_tips_1/proc_macro_diags_err_lite.png"/>
+<img class="center_img_wider" src="/img/eng_rust_tips_1/proc_macro_diags_err_lite.png"/>
 </div>
 <p/>
 We find that is an error prompt in vscode/RA, and it is said that what's the problem identity and the location/span of this ident (Note: here the span is not exact which may be confirmed by Rust core team).
@@ -65,7 +65,7 @@ We find that is an error prompt in vscode/RA, and it is said that what's the pro
 By changing function call from "error" to "warning", we got a "non-blocking" warning style prompt like this:
 <p></p>
 <div>
-<img class="center_img" src="/img/eng_rust_tips_1/proc_macro_diags_warn_lite.png"/>
+<img class="center_img_wider" src="/img/eng_rust_tips_1/proc_macro_diags_warn_lite.png"/>
 </div>
 <p/>
 There are four APIs: __error__, __warning__, __help__ and __note__ on Span for your favors. Consult the tracking issue for more[3] .
