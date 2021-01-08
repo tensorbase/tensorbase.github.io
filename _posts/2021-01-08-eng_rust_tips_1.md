@@ -27,7 +27,7 @@ The nightly has introduced "Procedural Macro Diagnostics" APIs [3] under the fea
 
 Here, I use [the s! macro in TensorBase as an example](https://github.com/tensorbase/tensorbase/blob/812ade62dec267652cc21373bb5efddda9097925/crates/base/tests/proc_macro_tests.rs#L35), which makes your writing C, Java like codes in your Rust sources in a free style. (In fact, this is just a raw token container with in-Rust value interpolation, you can embed almost any language in Rust using it.)
 
-A normal working scenarios like this:
+A normal working scenario like this:
 
 <div>
 <img class="center_img" src="/img/eng_rust_tips_1/ok_java_code_in_rust.png"/>
