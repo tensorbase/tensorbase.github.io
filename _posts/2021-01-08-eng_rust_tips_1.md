@@ -33,7 +33,7 @@ A normal working scenario like this:
 <img class="center_img" src="/img/eng_rust_tips_1/ok_java_code_in_rust.png"/>
 </div>
 <p/>
-expected gen-ed code is this:
+Expected gen-ed code is this:
 
 <div>
 <img class="center_img" src="/img/eng_rust_tips_1/ok_test_output.png"/>
@@ -45,7 +45,7 @@ When I miss a delimiter $ for dsadsa, then it panics,
 <img class="center_img" src="/img/eng_rust_tips_1/panic_java_in_rust.png"/>
 </div>
 <p/>
-here, we do not quickly understand the exact problem even that we can roll the vscode console to that panic point for some print-outs.
+Here, we may not quickly understand the exact problem in that we have no dedicated indication.
 
 Then, we use diag APIs in the potential key parsing point:
 
