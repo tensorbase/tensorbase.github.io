@@ -50,7 +50,7 @@ here, we do not quickly understand the exact problem even that we can roll the v
 Then, we use diag APIs in the potential key parsing point:
 
 <div>
-<img class="center_img" src="/img/eng_rust_tips_1/use_pm_diag.png"/>
+<img class="center_img_wider" src="/img/eng_rust_tips_1/use_pm_diag.png"/>
 </div>
 <p/>
 
