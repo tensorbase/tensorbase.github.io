@@ -60,7 +60,7 @@ And try another case - interpolated variable typo, we got this:
 <img class="center_img_wider" src="/img/eng_rust_tips_1/proc_macro_diags_err_lite.png"/>
 </div>
 <p/>
-We find that is an error prompt in vscode/RA, and it is said that what's the problem identity and the location/span of this ident (Note: here the span is not exact which may be a bug or just a surprise).
+We find that is an error prompt immediately in vscode/RA, which is shown that what's the problem identity and the location/span of this ident (Note: here the span is not exact which may be a bug or just a surprise).
 
 By changing function call from "error" to "warning", we got a "non-blocking" warning style prompt like this:
 <p></p>
