@@ -70,7 +70,7 @@ By changing the API call from "error" to "warning", we got a "non-blocking" warn
 <p/>
 There are four APIs: __error__, __warning__, __help__ and __note__ on Span for your favor. Consult the tracking issue for more[3] .
 
-In a real engineering, it is easy to provide an in-Rust direct external language editing experience to use that language compiler(e.g. GCC, JavaC) on top of this diagnostics API.
+In a real engineering, it is not hard to provide an in-Rust direct external language editing experience to use that language compiler(e.g. GCC, JavaC) on top of this diagnostics API.
 
 Great user-friendly proc macro diag experience!
 
