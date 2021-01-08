@@ -5,7 +5,7 @@ date: 2021-01-08
 ---
 
 ## Preamble
-Developing high-performance systems is a mind-twisting task. We face endless clever or stupid cases to conquer. It is very meaningful that we leave thoughts here.
+Developing high-performance systems is a mind-twisting task. We face endless clever or stupid cases to conquer. It is very meaningful that we leave thoughts here to benefit all.
 
 This series do not try to solve hard engineering puzzles. We just present fast-reading pieces to reflect what problem we meet in [this project (a high performance data system)](https://tensorbase.io/) and how we solve them in an elegant way by modern Rust.
 
