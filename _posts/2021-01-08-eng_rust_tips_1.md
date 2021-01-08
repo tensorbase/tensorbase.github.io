@@ -7,7 +7,7 @@ date: 2021-01-08
 ## Preamble
 Developing high-performance systems is a mind-twisting task. We face endless clever or stupid cases to conquer. It is very meaningful that we leave thoughts here to benefit all.
 
-This series hope to present that **fast-reading tips**, from a viewpoint of real engineering, to reflect the problem we meet in [this project (a high performance data system)](https://tensorbase.io/) and how we solve them in an elegant way by modern Rust.
+This series hope to present that **fast-reading tips**, from a viewpoint of real engineering, to reflect the problem we meet in [this project](https://tensorbase.io/) (a high performance data system) and how we solve them in an elegant way by the modern Rust.
 
 The idea of this series is inspired by our recent Rust Chinese community's conferences and online talkings. I really love our Rust community and thanks for all the help got from the community.
 
