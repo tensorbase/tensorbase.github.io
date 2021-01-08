@@ -93,7 +93,7 @@ For example, I enable the live debugging to the test to see what I have in kinds
 <p/>
 Neat! Do not need endless prints in you code any more!
 
-Finally, I hope fearless proc macro programming coming soon:)
+Finally, it is hoped fearless proc macro programming coming soon:)
 
 ## [Comments](https://www.reddit.com/r/rust/comments/kszyoa/engineering_rust_tips_1_proc_macro_debugging/)
 
