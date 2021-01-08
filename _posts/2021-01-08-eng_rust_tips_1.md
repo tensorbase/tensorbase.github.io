@@ -85,7 +85,7 @@ You just write a unit-testability-friendly tests like your conventional unit tes
 
 The advantage of unit test is that you use every swiss knifes in your toolbox with a right engineering style(no any adhoc setup). 
 
-For example, I enable the native debugging to the test to see what I have in kinds of proc macro syntax objects, like TokenStream here just by one click in RA:
+For example, I enable the live debugging to the test to see what I have in kinds of proc macro syntax objects, like TokenStream here just by one click in RA:
 
 <div>
 <img class="center_img_wider" src="/img/eng_rust_tips_1/proc_marco_unit_test.png"/>
