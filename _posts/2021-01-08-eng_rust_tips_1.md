@@ -17,13 +17,13 @@ Proc macro is an relatively unique language characteristics in Rust. It is great
 
 But sometimes, the desires to have more advanced representations exceed the fear from coding for the proc macro. You start to try!
 
-Commonly you've known, ```cargo expand``` and ```eprintln!```[1]. They are generally good, but a little boring works to make them inconvenient. And sometimes, they meet problems for temporary broken IDEs or you just do not want invasive output.
+Commonly you've known, ```cargo expand``` and ```eprintln!```[1]. They are generally good with a little boring works to make them inconvenient. Sometimes, they meet problems for temporary broken IDEs or that you just do not want invasive prints.
 
 Here, I suggest two other ways which I used in the Base engineering.
 
 ## Proc_macro_diagnostic API
 
-The nightly has introduced "Procedural Macro Diagnostics" APIs under the feature "proc_macro_diagnostic" as friendly dump tools which is seamlessly integrated into the proc macro output.
+The nightly has introduced "Procedural Macro Diagnostics" APIs under the feature "proc_macro_diagnostic" as friendly info-show tools which is seamlessly integrated into the proc macro output.
 
 Here, I use [the s! macro in TensorBase as an example](https://github.com/tensorbase/tensorbase/blob/812ade62dec267652cc21373bb5efddda9097925/crates/base/tests/proc_macro_tests.rs#L35), which makes your writing C, Java like codes in your Rust sources in a free style. (In fact, this is just a raw token container with in-Rust value interpolation, you can embed almost any language in Rust using it.)
 
@@ -53,7 +53,8 @@ Then, we use diag APIs in the potential key parsing point:
 <img class="center_img" src="/img/eng_rust_tips_1/use_pm_diag.png"/>
 </div>
 <p/>
-We got this:
+
+And try another case - interpolated variable typo, we got this:
 <p></p>
 <div>
 <img class="center_img" src="/img/eng_rust_tips_1/proc_macro_diags_err_lite.png"/>
