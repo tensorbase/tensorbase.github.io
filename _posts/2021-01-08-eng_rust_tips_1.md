@@ -91,7 +91,7 @@ For example, I enable the native debugging to the test to see what I have in kin
 <img class="center_img_wider" src="/img/eng_rust_tips_1/proc_marco_unit_test.png"/>
 </div>
 <p/>
-Neat! Do not need to add endless prints in you code any more!
+Neat! Do not need endless prints in you code any more!
 
 Finally, I hope fearless proc macro programming coming soon:)
 
