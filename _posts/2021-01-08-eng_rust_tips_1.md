@@ -32,18 +32,19 @@ In a normal working scenarios, like this:
 <div>
 <img class="center_img" src="/img/eng_rust_tips_1/ok_java_code_in_rust.png"/>
 </div>
-
+<p/>
 expected gen-ed code is this:
 
 <div>
 <img class="center_img" src="/img/eng_rust_tips_1/ok_test_output.png"/>
 </div>
-
+<p/>
 When I miss a delimiter $, then it panics,
 
 <div>
 <img class="center_img" src="/img/eng_rust_tips_1/panic_java_in_rust.png"/>
 </div>
+<p/>
 here, we do not quickly understand the exact problem even that we can roll the vscode console to that panic point for some print-outs.
 
 Then, we use diag APIs in the potential key parsing point:
@@ -51,12 +52,13 @@ Then, we use diag APIs in the potential key parsing point:
 <div>
 <img class="center_img" src="/img/eng_rust_tips_1/use_pm_diag.png"/>
 </div>
-
+<p/>
 We got this:
 <p></p>
 <div>
 <img class="center_img" src="/img/eng_rust_tips_1/proc_macro_diags_err_lite.png"/>
 </div>
+<p/>
 We find that is an error prompt in RA, and it is said that what's the problem identity and the location/span of this ident (Note: here the span is not exact which may be confirmed by Rust core team).
 
 By change function call from "error" to "warning", we got a non-blocking prompt like this:
@@ -64,7 +66,7 @@ By change function call from "error" to "warning", we got a non-blocking prompt 
 <div>
 <img class="center_img" src="/img/eng_rust_tips_1/proc_macro_diags_warn_lite.png"/>
 </div>
-
+<p/>
 There are four APIs: __error__, __warning__, __help__ and __note__ on Span for your favors.
 
 Great user-friendly proc macro diag experiences!
@@ -85,7 +87,7 @@ For example, I enable the native debugging to the test to see what I have in kin
 <div>
 <img class="center_img_wider" src="/img/eng_rust_tips_1/proc_marco_unit_test.png"/>
 </div>
-
+<p/>
 Do not need to add endless prints in you code any more!
 
 Finally, I hope fearless proc macro programming coming soon:)
