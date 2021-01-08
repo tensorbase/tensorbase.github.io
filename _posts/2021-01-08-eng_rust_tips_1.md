@@ -13,9 +13,9 @@ The idea of this series is inspired by our recent Rust Chinese community's confe
 
 
 ## Proc Macro
-Proc macro is an relatively unique language characteristics in Rust. It is great for library writers but notorious to figure out the problems when bugs happen. Unfortunately, bugs always happen no matter you are... So, I suggest using self-brewed proc macros carefully in the large engineering.
+Proc macro is an relatively unique language characteristics in Rust. It is great for library writers but notorious to figure out the problem when bugs happen. Unfortunately, bugs always happen... So, it should be careful to us self-brewed proc macros in large engineering.
 
-But sometimes, the desires to have more advanced representations exceed the fear from coding for the proc macro. You start to try!
+Sometimes, the desires to have more advanced representations exceed the fear from coding for the proc macro. You start to try!
 
 Commonly you've known, ```cargo expand``` and ```eprintln!```[1]. They are generally good with a little boring works to make them inconvenient. Sometimes, they meet problems for temporary broken IDEs or that you just do not want invasive prints.
 
