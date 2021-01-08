@@ -60,7 +60,7 @@ And try another case - interpolated variable typo, we got this:
 <img class="center_img_wider" src="/img/eng_rust_tips_1/proc_macro_diags_err_lite.png"/>
 </div>
 <p/>
-We find that is an error prompt in vscode/RA, and it is said that what's the problem identity and the location/span of this ident (Note: here the span is not exact which may be confirmed by Rust core team).
+We find that is an error prompt in vscode/RA, and it is said that what's the problem identity and the location/span of this ident (Note: here the span is not exact which may be a bug or just a surprise).
 
 By changing function call from "error" to "warning", we got a "non-blocking" warning style prompt like this:
 <p></p>
@@ -98,5 +98,5 @@ Finally, I hope fearless proc macro programming coming soon:)
 
 ## References
 1. [cargo expand](https://github.com/dtolnay/cargo-expand)
-2. [debugging-tips from Dtolnay](https://github.com/dtolnay/proc-macro-workshop#debugging-tips)
+2. [Debugging-tips from Dtolnay](https://github.com/dtolnay/proc-macro-workshop#debugging-tips)
 3. [Tracking Issue: Procedural Macro Diagnostics (RFC 1566)](https://github.com/rust-lang/rust/issues/54140)
