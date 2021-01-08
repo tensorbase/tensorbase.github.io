@@ -23,7 +23,7 @@ Here, I suggest two other ways which I used in the Base engineering.
 
 ## Proc_macro_diagnostic API
 
-The nightly has introduced "Procedural Macro Diagnostics" APIs under the feature "proc_macro_diagnostic" as friendly info-show tools which is seamlessly integrated into the proc macro output.
+The nightly has introduced "Procedural Macro Diagnostics" APIs [3] under the feature "proc_macro_diagnostic" as friendly diag-info-show tool which is seamlessly integrated into the proc macro output.
 
 Here, I use [the s! macro in TensorBase as an example](https://github.com/tensorbase/tensorbase/blob/812ade62dec267652cc21373bb5efddda9097925/crates/base/tests/proc_macro_tests.rs#L35), which makes your writing C, Java like codes in your Rust sources in a free style. (In fact, this is just a raw token container with in-Rust value interpolation, you can embed almost any language in Rust using it.)
 
