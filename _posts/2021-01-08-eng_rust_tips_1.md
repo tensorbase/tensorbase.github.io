@@ -68,11 +68,11 @@ By changing the API call from "error" to "warning", we got a "non-blocking" warn
 <img class="center_img_wider" src="/img/eng_rust_tips_1/proc_macro_diags_warn_lite.png"/>
 </div>
 <p/>
-There are four APIs: __error__, __warning__, __help__ and __note__ on Span for your favors. Consult the tracking issue for more[3] .
+There are four APIs: __error__, __warning__, __help__ and __note__ on Span for your favor. Consult the tracking issue for more[3] .
 
-In a real engineering, it is easy to provide a in-Rust language direct editing experience to use a external language compilers (e.g. GCC, JavaC) on top of this diagnostics API.
+In a real engineering, it is easy to provide an in-Rust direct external language editing experience to use that language compiler(e.g. GCC, JavaC) on top of this diagnostics API.
 
-Great user-friendly proc macro diag experiences!
+Great user-friendly proc macro diag experience!
 
 
 ## Unit Testability for Proc Macro
