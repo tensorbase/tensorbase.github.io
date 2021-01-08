@@ -9,7 +9,7 @@ Developing high-performance systems is a mind-twisting task. We face endless cle
 
 This series hope to just present fast-reading tips to reflect what problem we meet in [this project (a high performance data system)](https://tensorbase.io/) and how we solve them in an elegant way by modern Rust.
 
-The idea of this series is inspired by our recent Rust Chinese community's conferences and online talkings. To make more people in the whole community known the works we done in current Chinese community, I post this series in English.
+The idea of this series is inspired by our recent Rust Chinese community's conferences and online talkings. I really love our Rust community and thanks for all the help got from the community.
 
 
 ## Proc Macro
