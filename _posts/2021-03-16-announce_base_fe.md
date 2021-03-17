@@ -143,5 +143,6 @@ If you are interested or willing to help, don't hesitate to <a href="/community"
 
 
 
-## [Comments](https://news.ycombinator.com/item?id=26487416)
+### [Comments in HN](https://news.ycombinator.com/item?id=26487416)
 
+### [Comments in r/rust](https://www.reddit.com/r/rust/comments/m6utn8/show_rrust_tensorbase_frontier_5x_10000x_faster/)
