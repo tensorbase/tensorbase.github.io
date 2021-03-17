@@ -11,7 +11,7 @@ Watch the [alpha demo here](/#demo). Welcome to join in the [alpha plan here](/#
 
 ## "Billions of rows per second" as Low Bar
 
-It is often see that kinds of DBs claims they can aggregate ["billions of rows per second"](https://www.google.com/search?q=billion+rows+per+second). The truth is that, their "billions of rows" aggregations can be done in ~40 milliseconds on a modern socket as shown in TensorBase. 
+You may see that some databases claim they can aggregate ["billions of rows per second"](https://www.google.com/search?q=billion+rows+per+second). The truth is that, their "billions of rows" aggregations can be done in ~40 milliseconds on a modern socket as shown in TensorBase. 
 
 Let's start the journey of benchmark!
 
