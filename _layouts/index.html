@@ -5,9 +5,9 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <!-- <meta name="description" content="">
+    <meta name="author" content=""> -->
 
     <title>TensorBase</title>
 
@@ -22,164 +22,206 @@
     </script>
 
 
-    <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="vendor/line-awesome/css/line-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
-        type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-
-    <!-- Theme CSS -->
-    <link href="css/grayscale.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="/css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
+        integrity="sha512-vebUliqxrVkBy3gucMhClmyQP9On/HAWQdKDXRaAlb/FKuTbxkjPKUyqVOxAcGwFDka79eTF+YXwfke1h3/wfg=="
+        crossorigin="anonymous" />
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    Menu <i class="fa fa-bars"></i>
-                </button>
+    <header class="navbar navbar-light navbar-toggleable-md bd-navbar">
+        <nav class=basepage-main-nav>
+            <div class="d-flex justify-content-between hidden-lg-up">
+                <button class="navbar-toggle collapsed" type=button data-toggle=collapse data-target=#basepage-main-nav
+                    aria-label="Toggle navigation" aria-controls=basepage-main-nav aria-expanded=false>
+                    <span class=navbar-toggler-icon></span></button>
             </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <div class="navbar-collapse collapse" id=basepage-main-nav>
                 <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#blog">Blog</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
+                    <li class=nav-item><a class=nav-link href= />Home</a></li>
+                    <li class=nav-item><a class=nav-link href="blog" />Blog</a></li>
+                    <li class=nav-item><a class=nav-link href="community" />Community</a></li>
+                    <li class=nav-item><a class=nav-link href="about" />About</a></li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
+        </nav>
+    </header>
+    <div id=act-home>
+        <div class=jumbotron>
+            <div class=basepage-jumbotron>
+                <!-- <img src=img/ class="align-middle basepage-logo" alt> -->
+                <p class=basehead>TensorBase</p>
+                <p class=lead>New Bigdata Warehousing for SMEs</p>
+                <a href="#plan-section" class="btn btn-secondary basepage-jumbotron-install">Join the Alpha Plan</a>
+            </div>
         </div>
-        <!-- /.container -->
-    </nav>
+        <div class="container basepage-home">
+            <div class=row>
+                <div class=col-md-4>
+                    <div class=basepage-features>
+                        <h2><i class="fa fa-tachometer" aria-hidden=true></i>Fastest OLAP Performance</h2>
+                        <p>TensorBase is optimized for large-scale data analysis.<br />
+                            <i class="fa fa-caret-right" aria-hidden="true"></i>5x to 10000x faster than that of
+                            ClickHouse for billion+ rows query set.
+                        </p>
 
-    <!-- Intro Header -->
-    <header class="intro">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">TensorBase</h1>
-                        <p class="intro-text">
-                            A Modern Big Data Warehouse<br>
-                            for Massive Realtime Data Intelligence
+                        <p>Read the <a href="/2021/03/16/announce_base_fe.html" style="font-weight: bold;">performance legend of TensorBase</a>.
+                        </p>
+
+                        <h2><i class="fa fa-plug" aria-hidden=true></i>Open Source Powered</h2>
+                        <p>TensorBase is written in Rust with the open source gene.<br />
+                            <i class="fa fa-caret-right" aria-hidden="true"></i>Unbreakable solid engineering from day
+                            0.<br />
+                            <i class="fa fa-caret-right" aria-hidden="true"></i>Do not compromise on the beauty of
+                            engineering when pursuing ultimate performance.
+                        </p>
+                    </div>
+                </div>
+                <div class=col-md-4>
+                    <div class=basepage-features>
+                        <h2><i class="fa fa-credit-card" aria-hidden=true></i>Economically Efficient</h2>
+                        <p>TensorBase is optimized for modern commodity hardwares.<br />
+                            <i class="fa fa-caret-right" aria-hidden="true"></i>Petabyte level data housing in one
+                            box.<br />
+                            <i class="fa fa-caret-right" aria-hidden="true"></i>Bigdata analysis costs are reduced to
+                            1/100 of that of mainstream peers.
+                        </p>
+
+                        <h2><i class="fa fa-car" aria-hidden=true></i>DBA-Free Automation</h2>
+                        <p>TensorBase maximally hides database details for users.<br />
+                            <i class="fa fa-caret-right" aria-hidden="true"></i>No dedicated administrators needed.
+                            <br />
+                            <i class="fa fa-caret-right" aria-hidden="true"></i>Reliability and high availability for
+                            regular failures are integrated out of box.<br />
+                            <i class="fa fa-caret-right" aria-hidden="true"></i>One-executable-file green installation.
+                        </p>
+                    </div>
+                </div>
+                <div class=col-md-4>
+                    <div class=basepage-features>
+                        <h2><i class="fa fa-database" aria-hidden=true></i>ClickHouse Compatible</h2>
+                        <p>TensorBase works seamlessly with current ClickHouse tooling ecosystem.<br />
+                            <i class="fa fa-caret-right" aria-hidden="true"></i>TensorBase supports mixed deployments
+                            with ClickHouse.<br />
+                            <i class="fa fa-caret-right" aria-hidden="true"></i>Fearless adaption as a drop-in or
+                            accelerator depends on your workloads.
+                        </p>
+
+                        <h2><i class="fa fa-balance-scale" aria-hidden=true></i>Cloud Neutral</h2>
+                        <p>TensorBase is optimized for SMEs (Small and Medium Enterprises). <br />
+                            <i class="fa fa-caret-right" aria-hidden="true"></i>Not Binding to any cloud vendors and
+                            components. Cloud unlocking empowers ordinary individuals bigdata wisdom in affordable
+                            costs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class=basepage-content id=demo>
+                <div class="container text-center">
+                    <h3 style="text-align:center">TensorBase Frontier Edition Alpha Demo</h3>
+                    <video controls="controls" poster="/media/base_fe_alpha_demo_poster.png" preload="auto"
+                        style="display:block; margin: 0 auto;">
+                        <source src="/media/base_fe_alpha_demo.mkv" />
+                        <source src="/media/base_fe_alpha_demo.webm" />
+                        <track label="English" kind="subtitles" srclang="en"
+                            src="/media/base_fe_alpha_demo_subtitles.vtt" default>
+                    </video>
+                </div>
+            </div>
+            <div class=basepage-showcase id=plan-section>
+                <div class=col-md-9>
+                    <div class=basepage-feature id="alpha">
+                        <h2>Alpha Plan</h2>
+                        <p>TensorBase has provided an alpha release of its Frontier Edition to early partners. </p> 
+                        <p> The Alpha
+                            release has not yet reached the production quality. This plan is targeted to let early partners
+                            evaluate the applicability of TensorBase in their production and data context, and feedback
+                            their ideas, bugs for further improvements. </p>
+
+                        <p>To join the alpha plan, just drop a message to <a
+                                href="mailto:alpha@tensorbase.io">alpha@tensorbase.io</a>.</p>
+
+                    </div>
+
+                    <div class=basepage-feature id=beta>
+                        <h2>Beta Release</h2>
+                        <p>TensorBase plans to distribute a commercial-friendly free binary of TensorBase FE when the
+                            production quality reached. </p>
+                        <p>For SMEs (Small and Medium Enterprises), it is enough to use the free binary distribution.
+                            Beta plan on the top of free binary will be provided to meet the needs of different businesses.
+                        </p>
+                        <p>Users of alpha plan are continuously serviced under the beta plan directly. </p>
+                    </div>
+
+                    <div class=basepage-feature id=ecsp>
+                        <h2>Enterprise Collaboration Source Plan</h2>
+
+                        <p>TensorBase FE proposes an enterprise collaboration source plan for any organization which
+                            agrees with TensorBase's visions and willing to help it.</p>
+
+                        <p>To join the ESCP, no money needed, companies just
+                            <li> Contributes at least one person into TensorBase.</li>
                         </p>
                         <p>
-
-                            <a class="btn btn-intro btn-lg" style="text-align:center;" href="https://github.com/tensorbase/tensorbase"></i><img
-                                    alt="GitHub icon" src="/img/icon_github.svg" height="22" width="22"> Get on
-                                GitHub</a>
+                            Then you have the ESCP benefits like:
+                            <li> Full source use rights, including any commercial uses. </li>
+                            <li> Propose and give priority to solving the requirements from your companies. </li>
+                            <li> Day 0 maintenance from TensorBase's outstanding engineering talents. </li>
                         </p>
-                        <a href="#about" class="btn btn-circle page-scroll">
-                            <i class="fa fa-arrow-down animated"></i>
-                        </a>
+                        <p>
+                        If you are interested, just schedule a talk with <a
+                                href="mailto:jin@tensorbase.io">the founder</a>.
+                        </p>        
                     </div>
+
+
+                    <div class=basepage-feature id=opensource>
+                        <h2>Open Source</h2>
+                        <p>TensorBase is written in Rust with open source genes in the blood. </p>
+                        <p>TensorBase provides an open source <a href="https://github.com/tensorbase/tensorbase">Base Edition</a>, which is mixed current open source
+                            implementations with tech ideas pulled from its Frontier edition.</p>
+                        <p>
+                            Based on the practices of <a href=#ecsp>ESCP</a>, TensorBase actively explores the path to complete open source. TensorBase hopes to merge two editions into one finally.
+                        </p>
+                        <p>
+                            If you are willing to help, join our <a href="/community">community</a> or <a href="mailto:jin@tensorbase.io">drop a message</a>.
+                        </p>  
+                    </div>
+                </div>
+                <div class="col-md-3 basepage-feature-selectors">
+                    <ul>
+                        <li class=basepage-feature-selector><a href=#alpha>Alpha Plan</a></li>
+                        <li class=basepage-feature-selector><a href=#beta>Beta Release</a></li>
+                        <li class=basepage-feature-selector><a href=#ecsp>ECS Plan</a></li>
+                        <li class=basepage-feature-selector><a href=#opensource>Open Source</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </header>
-
-
-    <section id="about" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-
-                <h2><i class="lab la-superpowers"></i> Extreme Performance Pursued</h2>
-                <h2><i class="las la-cube"></i> Highly Hackable Architecture</h2>
-                <h2><i class="las la-tools"></i> Data and Ops Engineering In Mind</h2>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="blog" class="container grey-section text-center">
-        <div class="row">
-            <div class="col-lg-6 col-lg-offset-3">
-                <h2>Blog Posts</h2>
-
-                <div class="text-center">
-                    {% for post in site.posts limit:20 %}
-                    <p><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a>
-                        <br />{{ post.date | date: "%B %-d, %Y" }}</p>
-                    {% endfor %}
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="container content-section text-center">
-        <!-- <div class="row">
-            <div class="control-panel">
-                <div class="control-panel__btn">
-                    <a class="btn btn-intro btn-lg" style="text-align:center;" href="https://join.slack.com/t/tensorbase/shared_invite/zt-gi2kgx9s-h7IPxc0fdo9h2EvtbLis~w"><img
-                            alt="join slack" src="/img/slack.svg" height="22" width="22"> Join Slack </a>
-                </div>
-                <div class="control-panel__btn">
-                    <a class="btn btn-intro btn-lg" style="text-align:center;" href=""></i><img alt="join microsoft teams"
-                            src="/img/teams.svg" height="22" width="22"> Join Teams</a>
-                </div>
-            </div>
-            <p></p>
-        </div> -->
-
-        <div class="row">
-
-            <div class="col-lg-8 col-lg-offset-2">
-                <h3>TensorBase Newsletter</h3>
-                <form role="form" class="form-inline" method="get" target="_blank"
-                    action="https://docs.google.com/forms/d/e/1FAIpQLScrhriaDFD5WpprSkJfZev47ZVfwjFOvWJwITM0YrAUHNI4Ew/viewform?">
-                    <input type="hidden" name="fvv" value="1" />
-                    <div class="form-group">
-                        <input type="email" name="emailAddress" placeholder="Enter Email Address"
-                            class="form-control input input-default input-lg " id="email">
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" class="btn btn-default btn-lg" />
-                    </div>
-                </form>
-            </div>
-    </section>
+    </div>
 
 
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p><small>Copyright &copy; 2020 TensorBase </small></p>
+            <p style="text-align:center"><small>Copyright &copy; 2020 - 2021 TensorBase </small></p>
         </div>
     </footer>
 
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-    <!-- Theme JavaScript -->
-    <script src="js/grayscale.js"></script>
-
-    <!-- Google Analytics -->
+    <script src=https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js
+        integrity=sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7
+        crossorigin=anonymous></script>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js
+        integrity=sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8
+        crossorigin=anonymous></script>
+    <script src=/js/bootstrap.min.js></script>
+    <script src=/js/base.js></script>
 
 
 </body>

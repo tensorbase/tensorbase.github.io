@@ -1,0 +1,47 @@
+WEBVTT
+
+0
+00:00:00.000 --> 00:00:03.000
+Firstly start TensorBase FE server (upper, use port 9528) and ClickHouse server (lower, use default port 9000)
+
+1
+00:00:07.200 --> 00:00:11.000
+Then use ClickHouse client to connect to 
+TensorBase FE server (upper) and ClickHouse server (lower)
+
+2
+00:00:12.000 --> 00:00:18.000
+Note ClickHouse client has prompted different server side infos
+TensorBase FE (upper) and ClickHouse (lower)
+
+3
+00:00:20.000 --> 00:00:25.000
+Let do some metadata managements
+TensorBase FE (upper) and ClickHouse (lower)
+
+4
+00:00:40.000 --> 00:00:44.000
+Try system.numbers as a low-hanging fruit
+TensorBase FE (upper) and ClickHouse (lower)
+
+5
+00:01:25.000 --> 00:01:30.000
+Note, the result correctness could be verified as well
+TensorBase FE (upper) and ClickHouse (lower)
+
+6
+00:01:39.000 --> 00:01:50.000
+Use table trips_lite_n10m to demo csv data importing from clickHouse-client
+
+7
+00:03:03.000 --> 00:03:15.000
+You can use the same command to ingest to TensorBase FE like in ClickHouse
+
+8
+00:03:30.000 --> 00:03:39.000
+Let's do some real world queries against TensorBase FE (upper) and ClickHouse (lower)
+
+9
+00:05:09.000 --> 00:05:18.000
+Let's see an ad-hoc change.
+TensorBase FE (upper) and ClickHouse (lower)

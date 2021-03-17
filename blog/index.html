@@ -1,0 +1,15 @@
+---
+layout: page
+---
+
+<div class="col-md-9 offset-md-3">
+
+
+    <div class="text-center">
+        {% for post in site.posts limit:10 %}
+        <p><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a>
+            <br />{{ post.date | date: "%B %-d, %Y" }}</p>
+        {% endfor %}
+    </div>
+
+</div>
