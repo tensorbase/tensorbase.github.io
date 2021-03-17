@@ -143,6 +143,5 @@ If you are interested or willing to help, don't hesitate to <a href="/community"
 
 
 
-
-## [Comments]()
+## [Comments](https://news.ycombinator.com/item?id=26487416)
 
