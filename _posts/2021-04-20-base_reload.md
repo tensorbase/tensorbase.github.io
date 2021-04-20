@@ -62,6 +62,6 @@ Waiting for you!
 
 <p></p>
 
-### [Comments in r/rust]()
+### [Comments in r/rust](https://www.reddit.com/r/rust/comments/mupu31/tensorbase_reload_new_clickhouse_in_rust_on_the/)
 
 ### [Comments in HN](https://news.ycombinator.com/item?id=26873816)
