@@ -56,7 +56,7 @@ The current completeness on single node is high. There are tons of interesting a
 * Distributing query on top of DataFusion Ballista
 * High-performance UDFs on top of [lightjit](https://github.com/tensorbase/tensorbase/tree/main/crates/lightjit)
 
-Yes, a plenty of document works are also needed. And the source is out (with good engineering cares IMHO). You are invited to [come into the community](https://github.com/tensorbase/tensorbase) to discuss anything and hopefully wonderful documents would be formed for all community people. 
+Yes, a plenty of document works are also needed to elaborate more detailed internal mechanisms to guide more newcomers. The good thing is that, the source is out with good engineering cares IMHO. You are invited to [come into the community](https://github.com/tensorbase/tensorbase) to discuss anything and hopefully wonderful outcomes would be inspired and created for all community people. 
 
 Waiting for you!
 
