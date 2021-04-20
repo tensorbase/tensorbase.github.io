@@ -18,13 +18,13 @@ We are proud that an out-of-the-box experience has been provided from today now.
 <div align="center">
 <img class="center_img_wider" src="/img/2021-04-20-base_reload/play_out_of_the_box.gif"/>
 </div>
-<p align="center">Get started</p>
+<p align="center">Get started live recording</p>
 
 Just try it yourself [on the project](https://github.com/tensorbase/tensorbase).
 
 ## Benchmarks
 
-A simple benchmark on real-world NYC Taxi dataset has been exercised ([details]()):
+A simple benchmark on real-world NYC Taxi dataset has been exercised ([details](https://github.com/tensorbase/tensorbase/blob/main/docs/benchmarks.md)):
 
 |Query |ClickHouse (v21.2.5.5)      | TensorBase (main branch)  | Speedup Ratio of TB   |
 |:----:|:---------------------------:|:-----------------------: | :--------------------------: |
