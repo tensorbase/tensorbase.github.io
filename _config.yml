@@ -19,3 +19,7 @@ baseurl:
 xxxpermalink: /:categories/:title.html
 xxxexclude: ["vendor"]
 exclude: ["img-ppt"]
+collections:
+  thisweek:
+    output: true
+    permalink: /thisweek/:path/
