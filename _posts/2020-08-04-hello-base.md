@@ -4,6 +4,8 @@ title: "TensorBase: a modern engineering effort for taming data deluges"
 date: 2020-08-04
 ---
 
+*EDITOR: For TensorBase, there are many changes from m0. What remains unchanged is the original intention of TensorBase to service all the people and business in this era!*
+
 Today, I am pleased to announce the milestone 0 of [TensorBase](https://github.com/tensorbase/tensorbase) (called Base for short as following). 
 
 Base is a modern engineering effort for building a high performance and cost-effective bigdata analytics infrastructure in an open source culture. 
