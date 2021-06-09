@@ -82,7 +82,7 @@ Compared to x86, RISC-V has a wonderful code density character. This will lead t
 
 ### Memory bandwidth
 
-We use a [memcpy routine from r/RISCV](https://www.reddit.com/r/RISCV/comments/mw50vo/test_of_standard_glibc_memcpy_vs_riscv_vector/). And we confirmed that the peak memory bandwidth is around 2GB/s as shown in that post. Memory bandwidth is poor compared to the server or even the laptop. But considering we are in DDR3 with much lower frequency, this result is not too bad.
+To make a benchmark against the memory bandwidth, we use a [memcpy routine from r/RISCV](https://www.reddit.com/r/RISCV/comments/mw50vo/test_of_standard_glibc_memcpy_vs_riscv_vector/). And we confirmed that the peak memory bandwidth is around 2GB/s as shown in that post. The memory bandwidth is poor compared to the server or even the laptop. But considering we are in DDR3 with much lower frequency, this result is still not bad.
 
 We use the sum aggregation to see how efficient the TensorBase engine of which part is Arrow/DataFusion. We got 400MB memory scan done in 0.87 second, then our query runtime throughput is about ~450MB/s, which reached the 1/4 of max bandwidth. It is not bad as well, although this shows that the Rust RISC-V binary not reach the peak bandwidth that seen in x86 cores. This may be relative to many different reasons, e.g., compiler optimization. But this also shows that, there is a lot of work to be done for real chip development ecosystem at least especially for Rust language.
 
