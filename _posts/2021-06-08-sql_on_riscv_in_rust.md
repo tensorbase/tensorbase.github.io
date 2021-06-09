@@ -25,7 +25,7 @@ To enable RISC-V development for Rust, you need install the target 'riscv64gc-un
 Next, we go with our good-shape-enough TensorBase sources with 
 
 ```
-cargo build --target=riscv64gc-unknown-linux-gnu
+cargo build --release --target=riscv64gc-unknown-linux-gnu
 ```
 
 There are many cross-platform-compilation ignoring feature warnings here. As our testing, these should but can not be eliminated by kinds of ways. So the only workaround is that you redirect the output into a file and check it with other tools. 
@@ -42,9 +42,7 @@ There are many cross-platform-compilation ignoring feature warnings here. As our
 
 There are several compilation errors happened. And it is simple to fix them. One of biggest change is that the cranelift side lightjit engine can not support current RISC-V target. As a result, the partition key expressions have been disabled by the removal of relative codes. This could be resolved that we use some fallback mechanism for partition key expression evaluations in the future.
 
-With some verbose porting work, we finally make the TensorBaser server binary out. After another verbose processing of QEMU setup, we finally pass our TensorBase integration tests in the QEMU. 
-
-Exciting!
+With some verbose porting work, we finally make the TensorBaser server binary out. After another verbose processing of QEMU setup, we finally pass our TensorBase integration tests in the QEMU. Exciting!
 
 <p></p>
 <div align="center">
@@ -56,7 +54,7 @@ Exciting!
 
 Running in VM does not mean it can run in the real chip. 
 
-One of problem of Nezha SBC is that the ISA in C906 chip is a modified version and has slight difference to that of official RISC-V ISA. At least, we have confirmed that the TensorBase server binary compiled by the official Rust RISC-V toolchain can not run on this T-Head C906 chip. 
+One of problem of Nezha SBC is that the ISA in C906 chip is a modified version and has slight difference to that of official RISC-V ISA. At least, we have confirmed that the TensorBase server binary linked by the official GCC RISC-V toolchain can not run on this T-Head C906 chip. 
 
 The solution is that you use the GCC toolings from Allwinner's dedicated [Tina SDK](https://d1.docs.allwinnertech.com/source/4_tinaversion/). After some still-verbose setups and compilations, we got the cross compilation GCC worked. 
 
@@ -110,7 +108,7 @@ In this query, we count the number of nyc taxi record in 2012 in the 100 million
 </div>
 <p align="center">Boot TensorBase up from a SD card</p>
 
-In this query, we count the number of nyc taxi record in every year in the 100 million dataset. The result is ridiculously 100s, which is 30x slower than that of x86 core. Considering we only use a 1 GHz core, it is seemly accepted. However, in fact, it is observed that we have not made fully optimizations on kernels for all arch-es, which is the next step we want to help with community. 
+In this query, we count the number of nyc taxi record in every year in the 100 million dataset. The result is ridiculously 100s, which is 30x slower than that of x86 core. Considering we only use a 1 GHz core, it is seemly accepted. However, it is observed that we have not made fully optimizations on kernels for all arch-es, which is the next step we want to help with community. 
 
 ## Future
 
@@ -118,15 +116,14 @@ In this query, we count the number of nyc taxi record in every year in the 100 m
 
 The uniqueness of T-Head C906 is that it is the first cheap enough and available real chip which has RVV support, although the implemented spec is 0.7.1 but not ratified 1.0. RVV and already available ARM's SVE is considered as a more friendly solution for compiler's auto-vectorization. For TensorBase and OLAP community, one big interesting work is how does the vector extension perform for accelerating data analytics. 
 
-Obviously, rustc's riscv64gc-unknown-linux-gnu target does not support this vector extension. And the interesting thing is that several relative matured RISC-V simulation environments and VMs, e.g. QEMU, do not support the vector extension spec. This makes the prototyping works is a little challenging. You should build your own QEMU from the RISC-V maintained repo. We will show more  in the future blog posts. 
+Obviously, rustc's riscv64gc-unknown-linux-gnu target does not support this vector extension. And more interesting thing is that several relative matured RISC-V simulation environments and VMs, e.g. QEMU, do not support the vector extension spec as well. This makes the prototyping works is a little challenging. One way is to build your own QEMU from the RISC-V maintained repo. We will show more how-tos in the future blog posts. 
 
 ### BeagleV
 
 We are the friend of one RISC-V company StarFive, which is partnered with [beagleboard](https://beagleboard.org). Therefore, it is expected that [Beaglev](https://beagleboard.org/beaglev) as the next more performant and also affordable RISC-V computer will coming soon for our testing. It is also hoped to show some interesting results from SQL benchmark suites for the next coming evaluation.
 
-
 ## Join the Community
 
-TensorBase believes that an infrastructure that can adapt to the times, like the Rust language itself, must be open source and innovative. Therefore, we are excited to make TensorBase happen on the top of "open source" hardware! 
+TensorBase believes that an infrastructure that can adapt to the era, like the Rust language itself, must be open source and innovative. Therefore, we are excited to make open source data warehouse happen on the top of "open source" hardware! 
 
 Welcome to the [TensorBase community](https://github.com/tensorbase/tensorbase) to share your views and code, and to witness the thinking and iteration of the future data warehouse. We are a group of low level data and performance experts. In the [TensorBase community](https://github.com/tensorbase/tensorbase), we work with [Apache Arrow](https://github.com/apache/arrow-rs) and [Arrow DataFusion](https://github.com/apache/arrow-datafusion) with our own unique OLAP(Online Analytical Processing) innovations to build the next five years of the Rust big data ecosystem!
