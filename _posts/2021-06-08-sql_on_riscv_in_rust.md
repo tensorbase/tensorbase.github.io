@@ -10,11 +10,11 @@ It is honored to announce that TensorBase is the first SQL powered data warehous
 <div align="center">
 <img class="center_img_wider" src="/img/2021-06-08-sql_on_riscv_in_rust/base_on_nezha.gif"/>
 </div>
-<p align="center">Animation(Win10 wsl2)： run SQL query against TensorBase on real RISC-V chip with 100 Million stripped NYC taxi dataset</p>
+<p align="center">Animation(Win10 wsl2)： run SQL query against TensorBase on real RISC-V chip with 100 M stripped NYC taxi dataset</p>
 
 ## Journey
 
-In the early of last week, we got one Nezha RISC-V SBC(Single Board Computer) which shipped with a single-core [Alibaba T-Head C906](https://www.t-head.cn/product/c906?lang=en) RISC-V chip made by Allwinner.
+In the early of last week, we got one Nezha RISC-V SBC(Single Board Computer) which shipped with a single-core [Alibaba T-Head C906](https://www.t-head.cn/product/c906?lang=en) RISC-V chip made by Allwinner. We are excited to see if we can make some new interesting stuff for both Rust and RISC-V community.
 
 ### TensorBase on QEMU
 
