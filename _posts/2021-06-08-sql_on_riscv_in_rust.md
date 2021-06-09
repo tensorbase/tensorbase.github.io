@@ -127,3 +127,7 @@ We are the friend of one RISC-V company StarFive, which is partnered with [beagl
 TensorBase believes that an infrastructure that can adapt to the era, like the Rust language itself, must be open source and innovative. Therefore, we are excited to make open source data warehouse happen on the top of "open source" hardware! 
 
 Welcome to the [TensorBase community](https://github.com/tensorbase/tensorbase) to share your views and code, and to witness the thinking and iteration of the future data warehouse. We are a group of low level data and performance experts. In the [TensorBase community](https://github.com/tensorbase/tensorbase), we work with [Apache Arrow](https://github.com/apache/arrow-rs) and [Arrow DataFusion](https://github.com/apache/arrow-datafusion) with our own unique OLAP(Online Analytical Processing) innovations to build the next five years of the Rust big data ecosystem!
+
+<p></p>
+
+### [Comments in r/rust](https://www.reddit.com/r/rust/comments/nvy2oa/sql_on_riscv_chip_in_rust/)
