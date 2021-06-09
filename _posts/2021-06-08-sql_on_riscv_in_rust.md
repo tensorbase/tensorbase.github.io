@@ -84,7 +84,7 @@ Compared to x86, RISC-V has a wonderful code density character. This will lead t
 
 To make a benchmark against the memory bandwidth, we use a [memcpy routine from r/RISCV](https://www.reddit.com/r/RISCV/comments/mw50vo/test_of_standard_glibc_memcpy_vs_riscv_vector/). And we confirmed that the peak memory bandwidth is around 2GB/s as shown in that post. The memory bandwidth is poor compared to the server or even the laptop. But considering we are in DDR3 with much lower frequency, this result is still not bad.
 
-We use the sum aggregation to see how efficient the TensorBase engine of which part is Arrow/DataFusion. We got 400MB memory scan done in 0.87 second, then our query runtime throughput is about ~450MB/s, which reached the 1/4 of max bandwidth. It is not bad as well, although this shows that the Rust RISC-V binary not reach the peak bandwidth that seen in x86 cores. This may be relative to many different reasons, e.g., compiler optimization. But this also shows that, there is a lot of work to be done for real chip development ecosystem at least especially for Rust language.
+We use the sum aggregation to see how efficient the TensorBase engine of which some part is Arrow/DataFusion. We got 400MB memory scan done in 0.87 second, then our query runtime throughput is about ~450MB/s, which reached the 1/4 of max bandwidth. It is not bad as well, although this shows that the Rust RISC-V binary can not reach the peak memory read capability that seen in x86 cores. This may be relative to many reasons, e.g., compiler optimizations. This also shows that, there is a lot of work to be done for real chip development ecosystem.
 
 ### SQL on real chip
 
@@ -108,7 +108,7 @@ In this query, we count the number of nyc taxi record in 2012 in the 100 million
 </div>
 <p align="center">Boot TensorBase up from a SD card</p>
 
-In this query, we count the number of nyc taxi record in every year in the 100 million dataset. The result is ridiculously 100s, which is 30x slower than that of x86 core. Considering we only use a 1 GHz core, it is seemly accepted. However, it is observed that we have not made fully optimizations on kernels for all arch-es, which is the next step we want to help with community. 
+In this query, we count the number of nyc taxi record in every year in the 100 million dataset. The result is ridiculously 100s, which is 30x slower than that of x86 core. Considering we only use a single 1GHz core, it is seemly accepted. However, it is observed that we have not made fully optimizations on kernels for all arch-es, which is the next step we want to help with community. 
 
 ## Future
 
