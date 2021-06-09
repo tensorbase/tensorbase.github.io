@@ -26,7 +26,7 @@ In the early of last week, we got one Nezha RISC-V SBC(Single Board Computer) wh
 
 If you are in the first time to develop for the RISC-V platform. It could be better to use the QEMU for RISC-V as your running and debugging target. As our evaluation, QEMU for RISC-V is one of most mature and performant platform for working with RISC-V.
 
-To enable RISC-V development for Rust, you need install the target 'riscv64gc-unknown-linux-gnu' via rustup (or something way you like). Then, you need install cross-platform compilation tools like GCC or CLANG for RISC-V arch. And it is better to explicitly specify the tool commands in RUSTFLAGS way or as in our like config.toml.
+To enable RISC-V development for Rust, you need install the target 'riscv64gc-unknown-linux-gnu' via rustup (or something way you like). Then, you need install cross-platform compilation tools like GCC or CLANG for RISC-V arch. And it is better to explicitly specify the tool commands in RUSTFLAGS way or as in [our like config.toml](https://github.com/tensorbase/tensorbase/blob/riscv/.cargo/config.toml).
 
 Next, we go with our good-shape-enough TensorBase sources with 
 
@@ -55,6 +55,8 @@ With some verbose porting work, we finally make the TensorBaser server binary ou
 <img class="center_img_wider" src="/img/2021-06-08-sql_on_riscv_in_rust/base_on_qemu_riscv.png"/>
 </div>
 <p align="center">Successfully run TensorBase integration tests in the QEMU</p>
+
+Checkout [the sources here](https://github.com/tensorbase/tensorbase/tree/riscv) yourself!
 
 ### TensorBase on Nezha SBC with C906 chip
 
