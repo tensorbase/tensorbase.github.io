@@ -78,7 +78,7 @@ X86    | 21200168
 
 Size of output binary for RISC-V is about ~ 61% that of x86. Cool! 
 
-Compared to x86, RISC-V has a wonderful code density character. This will lead to less i-cache and image memory pressure, and finally favors better performance.
+Compared to x86, RISC-V has a wonderful code density character. This will lead to less i-cache and image memory pressure, and finally favors better performance. We like clean works, and RISC-V has a bright future!
 
 ### Memory bandwidth
 
