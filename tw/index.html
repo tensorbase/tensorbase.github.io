@@ -5,9 +5,8 @@ layout: page
 <div class="col-md-9 offset-md-3">
 
     <div class="text-center">
-        {% assign items = site.thisweek | sort: 'date' %}
-        {% for item in items limit:10 reversed %}
-        <p><a href="{{ site.baseurl}}{{ item.url }}">{{ item.title }}, {{ item.date | date: "%B %-d, %Y" }}</a>
+        {% for post in site.thisweek limit:15 reversed %}
+        <p><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}, {{ post.date | date: "%B %-d, %Y" }}</a>
             </p>
         {% endfor %}
     </div>
