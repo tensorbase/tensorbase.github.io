@@ -6,7 +6,7 @@ layout: page
 
     <div class="text-center">
         {% assign items = site.thisweek | sort: 'date' %}
-        {% for item in items limit:10 %}
+        {% for item in items limit:10 reversed %}
         <p><a href="{{ site.baseurl}}{{ item.url }}">{{ item.title }}, {{ item.date | date: "%B %-d, %Y" }}</a>
             </p>
         {% endfor %}
