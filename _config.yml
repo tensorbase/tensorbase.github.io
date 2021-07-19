@@ -12,7 +12,22 @@ keywords:
 - query
 - compiler
 - performance
-- scaleup
+- analytics
+- warehouse
+- database
+- OLAP
+- AP
+- rust
+- jit
+- engineering
+- modern
+- high-performance
+- data-analysis
+- data-warehouse
+- rust-lang
+- scale-up
+- scale-out 
+- data-infrastructure
 
 highlighter: rouge
 baseurl:
