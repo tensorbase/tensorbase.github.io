@@ -729,3 +729,15 @@ h5:hover a {
   margin-right: auto;
   margin-top: 1rem;
 }
+
+/*
+
+*/
+.joinus-container {
+  float: left;
+  width: 50%;
+}
+
+.joinus-element:nth-child(odd) {
+  clear: left;
+}
